@@ -1,0 +1,3 @@
+[submodule "qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai"]
+  path = qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai
+  url = https://github.com/edimilsonestevam/netsim-feedzai.git
