@@ -1,4 +1,5 @@
 name: SonarCloud
+
 on:
   push:
     branches:
@@ -12,12 +13,13 @@ jobs:
   build:
     name: Build and analyze
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          submodules: true  # Important to search for submodules
+          submodules: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up JDK 17
@@ -26,11 +28,6 @@ jobs:
           java-version: 17
           distribution: 'zulu'
 
-      #- name: Build with Maven
-        #run: mvn -B package --file pom.xml
-		
-      #- name: Checkout repository
-      
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
@@ -49,15 +46,24 @@ jobs:
         run: ls -la
 
       - name: Find and change to directory containing pom.xml
+        id: find-pom
         run: |
           if [ -f "pom.xml" ]; then
             echo "Found pom.xml in root"
-          elif [ -f "qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/pom.xml" ]; then
-            cd qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai
-            echo "Found pom.xml in submodule"
           else
-            echo "pom.xml not found" && exit 1
-
+            echo "pom.xml not found in root. Searching in subdirectories..."
+            for dir in $(find . -type f -name "pom.xml" -exec dirname {} \;); do
+              echo "Checking directory $dir"
+              if [ -f "$dir/pom.xml" ]; then
+                cd $dir
+                echo "Found pom.xml in $dir"
+                break
+              fi
+            done
+            if [ ! -f "pom.xml" ]; then
+              echo "pom.xml not found in any directory" && exit 1
+            fi
+          fi
           ls -la
 
       - name: Build and analyze
