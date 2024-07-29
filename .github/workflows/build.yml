@@ -2,7 +2,7 @@ name: SonarCloud
 
 on:
   push:
-      branches:
+    branches:
       - main
   pull_request:
     branches:
@@ -56,14 +56,14 @@ jobs:
             echo "pom.xml not found in any directory" && exit 1
           else
             echo "Found pom.xml in $POM_DIR"
-            cd $POM_DIR
+            echo "POM_DIR=$POM_DIR" >> $GITHUB_ENV
           fi
           echo "Listing files in the directory now:"
           ls -la
 
       - name: Build and analyze
-        working-directory: ${{ steps.find-pom.outputs.pom-dir }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests
+        working-directory: ${{ env.POM_DIR }}
