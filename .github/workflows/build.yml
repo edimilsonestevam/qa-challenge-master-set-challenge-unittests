@@ -42,24 +42,21 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: List files in current directory
+      - name: List files in root directory
         run: ls -la
 
       - name: Find directory containing pom.xml and change to it
         id: find-pom
         run: |
-          if [ -f "pom.xml" ]; then
-            echo "Found pom.xml in root"
+          echo "Searching for pom.xml..."
+          POM_DIR=$(find . -type f -name "pom.xml" -exec dirname {} \; | head -n 1)
+          if [ -z "$POM_DIR" ]; then
+            echo "pom.xml not found in any directory" && exit 1
           else
-            echo "pom.xml not found in root. Searching in subdirectories..."
-            POM_DIR=$(find . -type f -name "pom.xml" -exec dirname {} \; | head -n 1)
-            if [ -z "$POM_DIR" ]; then
-              echo "pom.xml not found in any directory" && exit 1
-            else
-              echo "Found pom.xml in $POM_DIR"
-              cd $POM_DIR
-            fi
+            echo "Found pom.xml in $POM_DIR"
+            cd $POM_DIR
           fi
+          echo "Listing files in the directory now:"
           ls -la
 
       - name: Build and analyze
