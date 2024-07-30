@@ -2,6 +2,7 @@ package com.feedzai.netsim.engine;
 
 public class NetworkConnection {
 
+	private NetworkPath resultPath = null;
 
 	public void interConnect(String networkPathOriginDestination) {
 		
@@ -46,6 +47,8 @@ public class NetworkConnection {
             // Simulate sending a packet from "C" to "J"
             NetworkPath pathCJ = net.sendPacket("C", "J");
             
+            resultPath = pathCJ;
+            
             // Print out the network path and how much time it took to send the packet
             System.out.println("Sending a packet from 'C' to 'J':");
             System.out.println( pathCJ );
@@ -53,7 +56,10 @@ public class NetworkConnection {
             System.out.println( pathCJ.getTime() );
             
         }else if(chosenNetworkPathInternalVariableCI.equalsIgnoreCase(networkPathOriginDestination)){
-            NetworkPath pathCI = net.sendPacket("C","I");
+            
+        	NetworkPath pathCI = net.sendPacket("C","I");
+            
+            resultPath = pathCI;
             
             System.out.println("Sending a packet from 'C' to 'I':");
             System.out.println( pathCI );
@@ -64,6 +70,8 @@ public class NetworkConnection {
         	
         	NetworkPath pathCK = net.sendPacket("C","K");
         	
+        	resultPath = pathCK;
+        	
             System.out.println("Sending a packet from 'C' to 'K':");
             System.out.println( pathCK );
             System.out.println("Time it took (msec):");
@@ -72,6 +80,8 @@ public class NetworkConnection {
         }else if(chosenNetworkPathInternalVariableBJ.equalsIgnoreCase(networkPathOriginDestination)){
         	
         	NetworkPath pathBJ = net.sendPacket("B","J");
+        	
+        	resultPath = pathBJ;
         	
             System.out.println("Sending a packet from 'B' to 'J':");
             System.out.println( pathBJ );
@@ -82,15 +92,18 @@ public class NetworkConnection {
         	
         	NetworkPath pathBI = net.sendPacket("B","I");
         	
+        	resultPath = pathBI;
+        	
             System.out.println("Sending a packet from 'B' to 'I':");
             System.out.println( pathBI );
             System.out.println("Time it took (msec):");
             System.out.println( pathBI.getTime() );
-            
         	
         }else if(chosenNetworkPathInternalVariableBK.equalsIgnoreCase(networkPathOriginDestination)){
         	
         	NetworkPath pathBK = net.sendPacket("B","K");
+        	
+        	resultPath = pathBK;
         	
             System.out.println("Sending a packet from 'B' to 'K':");
             System.out.println( pathBK );
@@ -101,6 +114,8 @@ public class NetworkConnection {
         	
         	NetworkPath pathAJ = net.sendPacket("A","J");
         	
+        	resultPath = pathAJ;
+        	
             System.out.println("Sending a packet from 'A' to 'J':");
             System.out.println( pathAJ );
             System.out.println("Time it took (msec):");
@@ -110,6 +125,8 @@ public class NetworkConnection {
         	
         	NetworkPath pathAI = net.sendPacket("A","I");
         	
+        	resultPath = pathAI;
+        	
             System.out.println("Sending a packet from 'A' to 'I':");
             System.out.println( pathAI );
             System.out.println("Time it took (msec):");
@@ -118,6 +135,8 @@ public class NetworkConnection {
         }else if(chosenNetworkPathInternalVariableAK.equalsIgnoreCase(networkPathOriginDestination)){
         	
         	NetworkPath pathAK = net.sendPacket("A","K");
+        	
+        	resultPath = pathAK;
         	
             System.out.println("Sending a packet from 'A' to 'K':");
             System.out.println( pathAK );
@@ -140,4 +159,13 @@ public class NetworkConnection {
         	
         }
 	}
+	
+	// By Edimilson Estevam
+	// Create a Getter for the resulPath
+	public NetworkPath getResultPath() {
+		
+		return resultPath;
+		
+	}
+	
 }
