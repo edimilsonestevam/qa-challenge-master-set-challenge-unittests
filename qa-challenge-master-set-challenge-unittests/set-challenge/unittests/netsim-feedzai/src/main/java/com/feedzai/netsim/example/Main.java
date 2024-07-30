@@ -11,7 +11,7 @@ public class Main {
         // By Edimilson Estevam
     	// User should choose a network path option
     	NetworkConnection net = new NetworkConnection();
-    	net.interConnect("ed");
+    	net.interConnect("BJ");
     	
     }
 }
