@@ -39,6 +39,7 @@ public class NetworkConnection {
         String chosenNetworkPathInternalVariableAI = "AI";
         String chosenNetworkPathInternalVariableAK = "AK";
         
+        // By Edimilson Estevam
         // Verify chosen network path
         if(chosenNetworkPathInternalVariableCJ.equalsIgnoreCase(networkPathOriginDestination)){
         	
