@@ -136,8 +136,8 @@ public class NetworkConnection {
         			+ "\"BK\", "
         			+ "\"AJ\", "
         			+ "\"AI\" or "
-        			+ "\"AK\")");
-
+        			+ "\"AK\"");
+        	
         }
 	}
 }
