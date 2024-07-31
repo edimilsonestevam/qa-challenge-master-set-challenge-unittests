@@ -20,7 +20,7 @@ public class NetworkConnectionTest{
     	net.interConnect("CJ");
     	NetworkPath actualMessage = net.getResultPath();
         
-    	String expectedMessage = "[C,E,F,X]";
+    	String expectedMessage = "[C,E,F,J]";
         assertEquals("Workflow C --> J", expectedMessage, actualMessage.toString());
         
 	}
