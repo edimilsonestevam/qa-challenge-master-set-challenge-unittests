@@ -109,7 +109,7 @@ public class Network {
         boolean foundTarget = false;
         while (!unvisited.isEmpty()) {
             // Find minimal node
-            String minNode = findMinNode(unvisited, dist);
+            String minNode = findMinNode(unvisited, dist);           
             unvisited.remove(minNode);
 
             // If we have found the target node we can exit.
