@@ -9,8 +9,12 @@
 
     <properties>
       	<sonar.organization>edimilsonestevam</sonar.organization>
-  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>		
+		<sonar.coverage.jacoco.xmlReportPaths>
+			../app-it/target/site/jacoco-aggregate/jacoco.xml
+		</sonar.coverage.jacoco.xmlReportPaths>
+  	 		
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>	
     </properties>
 
     <dependencies>
@@ -25,21 +29,36 @@
             <groupId>org.jacoco</groupId>
     		<artifactId>jacoco-maven-plugin</artifactId>
     		<version>0.8.12</version>
-        </dependency>
-        
+        </dependency>     
     </dependencies>
-
+    
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
+            	<groupId>org.sonarsource.scanner.maven</groupId>
+            	<artifactId>sonar-maven-plugin</artifactId>
+            	<version>3.7.0.1746</version>
             </plugin>
+            
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.7</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>report</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+             </plugin>
         </plugins>
     </build>
 </project>
