@@ -20,8 +20,8 @@ public class NetworkConnectionTest{
     	net.interConnect("CJ");
     	NetworkPath actualMessage = net.getResultPath();
         
-    	String expectedMessage = "[C,E,F,J]";
-        assertEquals(expectedMessage, actualMessage.toString());
+    	String expectedMessage = "[C,E,F,X]";
+        assertEquals("Workflow C --> J", expectedMessage, actualMessage.toString());
         
 	}
 	
@@ -32,7 +32,7 @@ public class NetworkConnectionTest{
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[C,E,G,I]";
-        assertEquals(expectedMessage, actualMessage.toString());
+        assertEquals("Workflow C --> I", expectedMessage, actualMessage.toString());
         
 	}
 	
@@ -43,7 +43,7 @@ public class NetworkConnectionTest{
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[C,E,F,H,K]";
-        assertEquals(expectedMessage, actualMessage.toString());
+        assertEquals("Workflow C --> K", expectedMessage, actualMessage.toString());
         
 	}
 	
@@ -54,7 +54,7 @@ public class NetworkConnectionTest{
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[B,D,F,J]";
-        assertEquals(expectedMessage, actualMessage.toString());
+        assertEquals("Workflow B --> J", expectedMessage, actualMessage.toString());
         
 	}
 	
@@ -65,7 +65,7 @@ public class NetworkConnectionTest{
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[B,D,F,G,I]";
-        assertEquals(expectedMessage, actualMessage.toString());
+        assertEquals("Workflow B --> I", expectedMessage, actualMessage.toString());
         
 	}
 	
@@ -76,7 +76,7 @@ public class NetworkConnectionTest{
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[B,D,F,H,K]";
-        assertEquals(expectedMessage, actualMessage.toString());
+        assertEquals("Workflow B --> K", expectedMessage, actualMessage.toString());
         
 	}
 	
@@ -87,7 +87,7 @@ public class NetworkConnectionTest{
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[A,D,F,J]";
-        assertEquals(expectedMessage, actualMessage.toString());
+        assertEquals("Workflow A--> J", expectedMessage, actualMessage.toString());
         
 	}
 	
@@ -98,7 +98,7 @@ public class NetworkConnectionTest{
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[A,D,F,G,I]";
-        assertEquals(expectedMessage, actualMessage.toString());
+        assertEquals("Workflow A --> I", expectedMessage, actualMessage.toString());
         
 	}
 	
@@ -109,7 +109,7 @@ public class NetworkConnectionTest{
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[A,D,F,H,K]";
-        assertEquals(expectedMessage, actualMessage.toString());
+        assertEquals("Workflow A --> K", expectedMessage, actualMessage.toString());
         
 	}
 }
