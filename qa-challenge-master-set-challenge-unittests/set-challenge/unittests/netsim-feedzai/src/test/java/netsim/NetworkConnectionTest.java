@@ -1,6 +1,7 @@
 package netsim;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -110,6 +111,16 @@ public class NetworkConnectionTest{
         
     	String expectedMessage = "[A,D,F,H,K]";
         assertEquals("Workflow A --> K", expectedMessage, actualMessage.toString());
+        
+	}
+	
+	@Test
+	public void testNetworkConnectionPathWrong() {
+		
+		net.interConnect("ED");
+    	NetworkPath actualMessage = net.getResultPath();
+        
+    	assertNull("Wrong Workflow", actualMessage);
         
 	}
 }

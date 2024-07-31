@@ -4,7 +4,6 @@ import static netsim.NetworkUtils.B;
 import static org.junit.Assert.*;
 
 import java.util.Collections;
-import java.util.Random;
 import java.util.logging.Logger;
 
 import org.junit.Before;
