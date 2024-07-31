@@ -119,7 +119,6 @@ public class NetworkPathTest {
 				for(String node : path) {
 					assertTrue(Collections.frequency(path, node)==1);
 				}
-				//System.out.println(path);
 			}
 		}
 	}
