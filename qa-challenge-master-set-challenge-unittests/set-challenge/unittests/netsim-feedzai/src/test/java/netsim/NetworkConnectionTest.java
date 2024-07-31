@@ -9,16 +9,14 @@ import com.feedzai.netsim.engine.NetworkConnection;
 import com.feedzai.netsim.engine.NetworkPath;
 
 // By Edimilson Estevam
-public class NetworkConnectionTest{
+public class NetworkConnectionTest {
 	
-	private NetworkPath resultPath = null;	
 	NetworkConnection net = new NetworkConnection();
 
-    
 	@Test
 	public void testNetworkConnectionPathCJ() {
 		
-    	net.interConnect("CJ");
+		net.interConnect("CJ");
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[C,E,F,J]";
@@ -29,7 +27,7 @@ public class NetworkConnectionTest{
 	@Test
 	public void testNetworkConnectionPathCI() {
 		
-    	net.interConnect("CI");
+		net.interConnect("CI");
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[C,E,G,I]";
@@ -40,7 +38,7 @@ public class NetworkConnectionTest{
 	@Test
 	public void testNetworkConnectionPathCK() {
 		
-    	net.interConnect("CK");
+		net.interConnect("CK");
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[C,E,F,H,K]";
@@ -51,7 +49,7 @@ public class NetworkConnectionTest{
 	@Test
 	public void testNetworkConnectionPathBJ() {
 		
-    	net.interConnect("BJ");
+		net.interConnect("BJ");
     	NetworkPath actualMessage = net.getResultPath();
         
     	String expectedMessage = "[B,D,F,J]";

@@ -21,7 +21,7 @@ public class NetworkTest {
 	}
 
 	@Test
-	public void test() {
+	public void networkTest() {
 		LOGGER.info("hello from a simple dummy test!");
 	}
 }
