@@ -1,6 +1,6 @@
-package netsim;
+package com.feedzai.netsim.test;
 
-import static netsim.NetworkUtils.B;
+import static com.feedzai.netsim.test.NetworkUtils.B;
 import static org.junit.Assert.*;
 
 import java.util.Collections;

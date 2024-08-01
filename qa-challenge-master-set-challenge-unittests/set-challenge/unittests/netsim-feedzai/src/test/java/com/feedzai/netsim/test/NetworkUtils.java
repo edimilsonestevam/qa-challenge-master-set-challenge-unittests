@@ -1,4 +1,4 @@
-package netsim;
+package com.feedzai.netsim.test;
 
 import com.feedzai.netsim.engine.Network;
 

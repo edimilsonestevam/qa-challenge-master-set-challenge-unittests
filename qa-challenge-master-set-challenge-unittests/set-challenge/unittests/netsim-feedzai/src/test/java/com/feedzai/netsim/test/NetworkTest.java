@@ -1,4 +1,4 @@
-package netsim;
+package com.feedzai.netsim.test;
 
 import org.junit.Before;
 import org.junit.Test;
