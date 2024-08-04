@@ -2,6 +2,8 @@
 build/
 dist/
 target/
+qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/.settings
+qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/target
 
 # Ignore IDE-specific directories and files
 /.idea/
