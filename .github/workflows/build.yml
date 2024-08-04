@@ -70,7 +70,7 @@ jobs:
         working-directory: ${{ env.POM_DIR }}
 
       - name: Run SonarQube analysis
-        run: mvn sonar:sonar -Dsonar.projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests -Dsonar.host.url=https://your-sonar-instance -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+        run: mvn sonar:sonar -Dsonar.projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
