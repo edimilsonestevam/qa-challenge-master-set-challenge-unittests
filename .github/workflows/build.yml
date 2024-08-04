@@ -61,22 +61,18 @@ jobs:
           echo "Listing files in the directory now:"
           ls -la
 
-      - name: Build project
-        run: mvn clean verify
+      - name: Build the project
+        run: mvn -B verify
         working-directory: ${{ env.POM_DIR }}
 
       - name: List files in target directory
-        run: ls -la ${{ env.POM_DIR }}/target/site/jacoco
+        run: ls -la ./qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/target
 
-      - name: Setup Maven settings
-        run: |
-          mkdir -p ~/.m2
-          cp .github/m2/settings-security.xml ~/.m2/settings-security.xml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: List files in jacoco directory
+        run: ls -la ./qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/target/site/jacoco
 
-      - name: Build and analyze
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests
+      - name: SonarCloud Scan
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
