@@ -65,4 +65,4 @@ _yardoc/             # YARD documentation directory
 # Ignore all files in a specific directory
 # Only add this if you want to ignore everything in a specific directory
 # /some-directory/*
-/target/
+/netsim/target
