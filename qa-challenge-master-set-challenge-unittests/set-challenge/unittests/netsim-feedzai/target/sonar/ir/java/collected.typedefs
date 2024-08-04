@@ -22,44 +22,44 @@ sendPacketycom.feedzai.netsim.engine.Network#sendPacket(Ljava/lang/String;Ljava
 getResultPathbcom.feedzai.netsim.engine.NetworkConnection#getResultPath()Lcom/feedzai/netsim/engine/NetworkPath;]
 interConnectMcom.feedzai.netsim.engine.NetworkConnection#interConnect(Ljava/lang/String;)Vjava.lang.ObjectY
 java.io.BufferedReader?
-readLine3java.io.BufferedReader#readLine()Ljava/lang/String;«
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
 java.util.StringTokenizerH
 nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
-	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;<
-java.util.Scanner'
-nextIntjava.util.Scanner#nextInt()IY
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
 java.io.BufferedReader?
-readLine3java.io.BufferedReader#readLine()Ljava/lang/String;«
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
 java.util.StringTokenizerH
 nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
-	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;<
-java.util.Scanner'
-nextIntjava.util.Scanner#nextInt()IY
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
 java.io.BufferedReader?
-readLine3java.io.BufferedReader#readLine()Ljava/lang/String;«
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
 java.util.StringTokenizerH
 nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
-	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;<
-java.util.Scanner'
-nextIntjava.util.Scanner#nextInt()IY
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
 java.io.BufferedReader?
-readLine3java.io.BufferedReader#readLine()Ljava/lang/String;«
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
 java.util.StringTokenizerH
 nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
-	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;<
-java.util.Scanner'
-nextIntjava.util.Scanner#nextInt()IY
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
 java.io.BufferedReader?
-readLine3java.io.BufferedReader#readLine()Ljava/lang/String;«
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
 java.util.StringTokenizerH
 nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
-	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;<
-java.util.Scanner'
-nextIntjava.util.Scanner#nextInt()IY
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;Y
 java.io.BufferedReader?
-readLine3java.io.BufferedReader#readLine()Ljava/lang/String;«
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I«
 java.util.StringTokenizerH
 nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
-	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;<
-java.util.Scanner'
-nextIntjava.util.Scanner#nextInt()I
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;
