@@ -59,10 +59,18 @@ jobs:
             echo "POM_DIR=$POM_DIR" >> $GITHUB_ENV
           fi
           echo "Listing files in the directory now:"
-          ls -la
+          ls -la $POM_DIR
 
-      - name: Build and analyze
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests
+      - name: Build the project and run tests
+        run: mvn clean verify
+        working-directory: ${{ env.POM_DIR }}
+
+      - name: Generate JaCoCo coverage report
+        run: mvn jacoco:report
+        working-directory: ${{ env.POM_DIR }}
+
+      - name: Run SonarQube analysis
+        run: mvn sonar:sonar -Dsonar.projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests -Dsonar.host.url=https://your-sonar-instance -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
