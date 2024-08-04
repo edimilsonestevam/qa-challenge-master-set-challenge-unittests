@@ -50,6 +50,3 @@ jspm_packages/
 
 # JavaScript test coverage
 coverage/
-
-# Specific directory to ignore
-qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/target/
