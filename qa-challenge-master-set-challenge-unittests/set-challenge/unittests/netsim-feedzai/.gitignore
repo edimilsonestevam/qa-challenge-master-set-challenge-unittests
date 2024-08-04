@@ -1,1 +1,52 @@
-/target/
+# Ignore directories created by popular build tools
+build/
+dist/
+target/
+
+# Ignore IDE-specific directories and files
+/.idea/
+/.vscode/
+/*.iml
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java-specific ignores
+*.class
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# JavaScript/Node.js specific ignores
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# JavaScript test coverage
+coverage/
