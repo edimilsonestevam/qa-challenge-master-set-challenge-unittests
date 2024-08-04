@@ -20,12 +20,7 @@ sendPacketycom.feedzai.netsim.engine.Network#sendPacket(Ljava/lang/String;Ljava
 +com.feedzai.netsim.engine.NetworkConnection?
 <init>5com.feedzai.netsim.engine.NetworkConnection#<init>()Vs
 getResultPathbcom.feedzai.netsim.engine.NetworkConnection#getResultPath()Lcom/feedzai/netsim/engine/NetworkPath;]
-interConnectMcom.feedzai.netsim.engine.NetworkConnection#interConnect(Ljava/lang/String;)Vjava.lang.Object«
-java.util.StringTokenizerH
-nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
-	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;<
-java.util.Scanner'
-nextIntjava.util.Scanner#nextInt()IY
+interConnectMcom.feedzai.netsim.engine.NetworkConnection#interConnect(Ljava/lang/String;)Vjava.lang.ObjectY
 java.io.BufferedReader?
 readLine3java.io.BufferedReader#readLine()Ljava/lang/String;«
 java.util.StringTokenizerH
@@ -62,4 +57,9 @@ sendPacketycom.feedzai.netsim.engine.Network#sendPacket(Ljava/lang/String;Ljava
 java.util.Scanner'
 nextIntjava.util.Scanner#nextInt()IY
 java.io.BufferedReader?
-readLine3java.io.BufferedReader#readLine()Ljava/lang/String;
+readLine3java.io.BufferedReader#readLine()Ljava/lang/String;«
+java.util.StringTokenizerH
+nextElement9java.util.StringTokenizer#nextElement()Ljava/lang/Object;D
+	nextToken7java.util.StringTokenizer#nextToken()Ljava/lang/String;<
+java.util.Scanner'
+nextIntjava.util.Scanner#nextInt()I

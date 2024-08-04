@@ -1,0 +1,67 @@
+# Compiled class files
+*.class              # Java compiled class files
+
+# Build directories and temporary files
+target/              # Maven build directory
+build/               # Build directories
+dist/                # Distribution directory
+
+# Log files
+*.log                # Log files
+
+# Temporary files
+*.tmp                # Temporary files
+*.swp                # Temporary files from editors (e.g., Vim)
+*.swo                # Temporary files from editors (e.g., Vim)
+*.bak                # Backup files
+
+# IDE-specific files and directories
+.classpath           # Eclipse project configuration file
+.project             # Eclipse project configuration file
+.settings/           # Eclipse settings directory
+bin/                 # Eclipse binary directory
+.idea/               # IntelliJ IDEA project configuration directory
+*.iml                # IntelliJ IDEA module files
+*.ipr                # IntelliJ IDEA project file
+*.iws                # IntelliJ IDEA workspace file
+.vscode/             # VS Code configuration directory
+
+# System-specific files
+.DS_Store            # macOS metadata file
+Thumbs.db            # Windows thumbnail cache
+Desktop.ini          # Windows desktop configuration file
+
+# Dependency and package directories
+node_modules/        # Node.js dependencies directory
+__pycache__/         # Python bytecode cache directory
+*.py[cod]            # Python bytecode files
+*.pyo                # Optimized Python bytecode files
+*.pyd                # Python extension files
+*.egg                # Python package files
+*.egg-info/          # Python package info directory
+*.gem                # Ruby gem files
+*.rbc                # Ruby cache files
+.capybara-*.yml      # Capybara configuration files
+.rspec               # RSpec configuration file
+/.yardoc             # YARD documentation directory
+_yardoc/             # YARD documentation directory
+*.rvmrc              # RVM configuration file
+.bundle/             # Bundler package directory
+
+# Miscellaneous temporary files
+*.sublime-workspace  # Sublime Text workspace files
+*.sublime-project    # Sublime Text project files
+*.komodoproject      # Komodo project files
+*.nib/               # NIB files directory
+*.iws                # IntelliJ IDEA workspace files
+
+# Archive and package files
+*.zip                # ZIP files
+*.tar.gz             # Tarball files
+*.rar                # RAR files
+*.7z                 # 7z files
+*.tar                # Tar files
+
+# Ignore all files in a specific directory
+# Only add this if you want to ignore everything in a specific directory
+# /some-directory/*
