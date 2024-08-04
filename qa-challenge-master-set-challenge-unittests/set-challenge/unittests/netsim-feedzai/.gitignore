@@ -3,6 +3,8 @@ build/
 dist/
 target/
 
+/netsim/target
+
 # Ignore IDE-specific directories and files
 /.idea/
 /.vscode/
