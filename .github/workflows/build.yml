@@ -44,16 +44,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      - name: List files in target directory
-        run: ls -la target
+      - name: List root directory
+        run: ls -la
 
-      - name: List files in jacoco directory
-        run: ls -la target/site/jacoco
+      - name: List target directory (if exists)
+        run: ls -la target || echo "target directory does not exist"
 
       - name: Build the project
         run: mvn -B verify
         working-directory: ./qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai
 
+      - name: List target directory after build
+        run: ls -la target || echo "target directory does not exist after build"
+        
       - name: SonarCloud Scan
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
