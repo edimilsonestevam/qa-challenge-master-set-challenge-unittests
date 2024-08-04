@@ -1,68 +1,52 @@
-# Compiled class files
-*.class              # Java compiled class files
+# Ignore directories created by popular build tools
+build/
+dist/
+target/
 
-# Build directories and temporary files
-target/              # Maven build directory
-build/               # Build directories
-dist/                # Distribution directory
+# Ignore IDE-specific directories and files
+/.idea/
+/.vscode/
+/*.iml
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java-specific ignores
+*.class
+*.jar
+*.war
+*.ear
 
 # Log files
-*.log                # Log files
+*.log
 
-# Temporary files
-*.tmp                # Temporary files
-*.swp                # Temporary files from editors (e.g., Vim)
-*.swo                # Temporary files from editors (e.g., Vim)
-*.bak                # Backup files
+# BlueJ files
+*.ctxt
 
-# IDE-specific files and directories
-.classpath           # Eclipse project configuration file
-.project             # Eclipse project configuration file
-.settings/           # Eclipse settings directory
-bin/                 # Eclipse binary directory
-.idea/               # IntelliJ IDEA project configuration directory
-*.iml                # IntelliJ IDEA module files
-*.ipr                # IntelliJ IDEA project file
-*.iws                # IntelliJ IDEA workspace file
-.vscode/             # VS Code configuration directory
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
-# System-specific files
-.DS_Store            # macOS metadata file
-Thumbs.db            # Windows thumbnail cache
-Desktop.ini          # Windows desktop configuration file
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# Dependency and package directories
-node_modules/        # Node.js dependencies directory
-__pycache__/         # Python bytecode cache directory
-*.py[cod]            # Python bytecode files
-*.pyo                # Optimized Python bytecode files
-*.pyd                # Python extension files
-*.egg                # Python package files
-*.egg-info/          # Python package info directory
-*.gem                # Ruby gem files
-*.rbc                # Ruby cache files
-.capybara-*.yml      # Capybara configuration files
-.rspec               # RSpec configuration file
-/.yardoc             # YARD documentation directory
-_yardoc/             # YARD documentation directory
-*.rvmrc              # RVM configuration file
-.bundle/             # Bundler package directory
+# JavaScript/Node.js specific ignores
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
 
-# Miscellaneous temporary files
-*.sublime-workspace  # Sublime Text workspace files
-*.sublime-project    # Sublime Text project files
-*.komodoproject      # Komodo project files
-*.nib/               # NIB files directory
-*.iws                # IntelliJ IDEA workspace files
+# Dependency directories
+jspm_packages/
 
-# Archive and package files
-*.zip                # ZIP files
-*.tar.gz             # Tarball files
-*.rar                # RAR files
-*.7z                 # 7z files
-*.tar                # Tar files
+# TypeScript cache
+*.tsbuildinfo
 
-# Ignore all files in a specific directory
-# Only add this if you want to ignore everything in a specific directory
-# /some-directory/*
-qa-challenge-master-set-challenge-unittests/qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/target/
+# JavaScript test coverage
+coverage/
