@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NetworkConnection.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">netsim</a> &gt; <a href="index.source.html" class="el_package">com.feedzai.netsim.engine</a> &gt; <span class="el_source">NetworkConnection.java</span></div><h1>NetworkConnection.java</h1><pre class="source lang-java linenums">package com.feedzai.netsim.engine;
+
+<span class="fc" id="L3">public class NetworkConnection {</span>
+
+<span class="fc" id="L5">	private NetworkPath resultPath = null;</span>
+
+	public void interConnect(String networkPathOriginDestination) {
+		
+		// Create a network with a default latency of 1 ms between nodes
+<span class="fc" id="L10">        Network net = Network.createWithLatency(1);</span>
+
+        // Interconnect network elements
+<span class="fc" id="L13">        net.connect(&quot;A&quot;, &quot;D&quot;);                // Uses default network latency</span>
+<span class="fc" id="L14">        net.connect(&quot;B&quot;, &quot;D&quot;);</span>
+<span class="fc" id="L15">        net.connect(&quot;C&quot;, &quot;E&quot;);</span>
+<span class="fc" id="L16">        net.connect(&quot;I&quot;, &quot;G&quot;);</span>
+<span class="fc" id="L17">        net.connect(&quot;J&quot;, &quot;F&quot;);</span>
+<span class="fc" id="L18">        net.connect(&quot;K&quot;, &quot;H&quot;, 10);            // Connect K computer to H router with a 10ms latency</span>
+<span class="fc" id="L19">        net.connect(&quot;D&quot;, &quot;E&quot;, 3);             // D to E has a 3ms latency</span>
+<span class="fc" id="L20">        net.connect(&quot;D&quot;, &quot;F&quot;, 2);             // D to F has a 2ms latency</span>
+<span class="fc" id="L21">        net.connect(&quot;E&quot;, &quot;F&quot;, 4);             // E to F has a 4ms latency</span>
+<span class="fc" id="L22">        net.connect(&quot;E&quot;, &quot;G&quot;, 5);             // E to G has a 5ms latency</span>
+<span class="fc" id="L23">        net.connect(&quot;G&quot;, &quot;F&quot;, 3);             // G to F has a 3ms latency</span>
+<span class="fc" id="L24">        net.connect(&quot;F&quot;, &quot;H&quot;, 5);             // F to H has a 5ms latency</span>
+
+        // Print out the network
+<span class="fc" id="L27">        System.out.println(&quot;Network representation (as an adjacency list)&quot;);</span>
+<span class="fc" id="L28">        System.out.println(net);</span>
+
+      
+        // By Edimilson Estevam
+        // Variables internal used to parameter
+<span class="fc" id="L33">        String chosenNetworkPathInternalVariableCJ = &quot;CJ&quot;;</span>
+<span class="fc" id="L34">        String chosenNetworkPathInternalVariableCI = &quot;CI&quot;;</span>
+<span class="fc" id="L35">        String chosenNetworkPathInternalVariableCK = &quot;CK&quot;;</span>
+<span class="fc" id="L36">        String chosenNetworkPathInternalVariableBJ = &quot;BJ&quot;;</span>
+<span class="fc" id="L37">        String chosenNetworkPathInternalVariableBI = &quot;BI&quot;;</span>
+<span class="fc" id="L38">        String chosenNetworkPathInternalVariableBK = &quot;BK&quot;;</span>
+<span class="fc" id="L39">        String chosenNetworkPathInternalVariableAJ = &quot;AJ&quot;;</span>
+<span class="fc" id="L40">        String chosenNetworkPathInternalVariableAI = &quot;AI&quot;;</span>
+<span class="fc" id="L41">        String chosenNetworkPathInternalVariableAK = &quot;AK&quot;;</span>
+        
+        // By Edimilson Estevam
+        // Verify chosen network path
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if(chosenNetworkPathInternalVariableCJ.equalsIgnoreCase(networkPathOriginDestination)){</span>
+        	
+            // Simulate sending a packet from &quot;C&quot; to &quot;J&quot;
+<span class="fc" id="L48">            NetworkPath pathCJ = net.sendPacket(&quot;C&quot;, &quot;J&quot;);</span>
+            
+<span class="fc" id="L50">            resultPath = pathCJ;</span>
+            
+            // Print out the network path and how much time it took to send the packet
+<span class="fc" id="L53">            System.out.println(&quot;Sending a packet from 'C' to 'J':&quot;);</span>
+<span class="fc" id="L54">            System.out.println( pathCJ );</span>
+<span class="fc" id="L55">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L56">            System.out.println( pathCJ.getTime() );</span>
+            
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        }else if(chosenNetworkPathInternalVariableCI.equalsIgnoreCase(networkPathOriginDestination)){</span>
+            
+<span class="fc" id="L60">        	NetworkPath pathCI = net.sendPacket(&quot;C&quot;,&quot;I&quot;);</span>
+            
+<span class="fc" id="L62">            resultPath = pathCI;</span>
+            
+<span class="fc" id="L64">            System.out.println(&quot;Sending a packet from 'C' to 'I':&quot;);</span>
+<span class="fc" id="L65">            System.out.println( pathCI );</span>
+<span class="fc" id="L66">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L67">            System.out.println( pathCI.getTime() );</span>
+            
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        }else if(chosenNetworkPathInternalVariableCK.equalsIgnoreCase(networkPathOriginDestination)){</span>
+        	
+<span class="fc" id="L71">        	NetworkPath pathCK = net.sendPacket(&quot;C&quot;,&quot;K&quot;);</span>
+        	
+<span class="fc" id="L73">        	resultPath = pathCK;</span>
+        	
+<span class="fc" id="L75">            System.out.println(&quot;Sending a packet from 'C' to 'K':&quot;);</span>
+<span class="fc" id="L76">            System.out.println( pathCK );</span>
+<span class="fc" id="L77">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L78">            System.out.println( pathCK.getTime() );</span>
+            
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        }else if(chosenNetworkPathInternalVariableBJ.equalsIgnoreCase(networkPathOriginDestination)){</span>
+        	
+<span class="fc" id="L82">        	NetworkPath pathBJ = net.sendPacket(&quot;B&quot;,&quot;J&quot;);</span>
+        	
+<span class="fc" id="L84">        	resultPath = pathBJ;</span>
+        	
+<span class="fc" id="L86">            System.out.println(&quot;Sending a packet from 'B' to 'J':&quot;);</span>
+<span class="fc" id="L87">            System.out.println( pathBJ );</span>
+<span class="fc" id="L88">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L89">            System.out.println( pathBJ.getTime() );</span>
+            
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        }else if(chosenNetworkPathInternalVariableBI.equalsIgnoreCase(networkPathOriginDestination)){</span>
+        	
+<span class="fc" id="L93">        	NetworkPath pathBI = net.sendPacket(&quot;B&quot;,&quot;I&quot;);</span>
+        	
+<span class="fc" id="L95">        	resultPath = pathBI;</span>
+        	
+<span class="fc" id="L97">            System.out.println(&quot;Sending a packet from 'B' to 'I':&quot;);</span>
+<span class="fc" id="L98">            System.out.println( pathBI );</span>
+<span class="fc" id="L99">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L100">            System.out.println( pathBI.getTime() );</span>
+        	
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        }else if(chosenNetworkPathInternalVariableBK.equalsIgnoreCase(networkPathOriginDestination)){</span>
+        	
+<span class="fc" id="L104">        	NetworkPath pathBK = net.sendPacket(&quot;B&quot;,&quot;K&quot;);</span>
+        	
+<span class="fc" id="L106">        	resultPath = pathBK;</span>
+        	
+<span class="fc" id="L108">            System.out.println(&quot;Sending a packet from 'B' to 'K':&quot;);</span>
+<span class="fc" id="L109">            System.out.println( pathBK );</span>
+<span class="fc" id="L110">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L111">            System.out.println( pathBK.getTime() );</span>
+            
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        }else if (chosenNetworkPathInternalVariableAJ.equalsIgnoreCase(networkPathOriginDestination)){</span>
+        	
+<span class="fc" id="L115">        	NetworkPath pathAJ = net.sendPacket(&quot;A&quot;,&quot;J&quot;);</span>
+        	
+<span class="fc" id="L117">        	resultPath = pathAJ;</span>
+        	
+<span class="fc" id="L119">            System.out.println(&quot;Sending a packet from 'A' to 'J':&quot;);</span>
+<span class="fc" id="L120">            System.out.println( pathAJ );</span>
+<span class="fc" id="L121">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L122">            System.out.println( pathAJ.getTime() );</span>
+            
+<span class="fc bfc" id="L124" title="All 2 branches covered.">        }else if(chosenNetworkPathInternalVariableAI.equalsIgnoreCase(networkPathOriginDestination)) {</span>
+        	
+<span class="fc" id="L126">        	NetworkPath pathAI = net.sendPacket(&quot;A&quot;,&quot;I&quot;);</span>
+        	
+<span class="fc" id="L128">        	resultPath = pathAI;</span>
+        	
+<span class="fc" id="L130">            System.out.println(&quot;Sending a packet from 'A' to 'I':&quot;);</span>
+<span class="fc" id="L131">            System.out.println( pathAI );</span>
+<span class="fc" id="L132">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L133">            System.out.println( pathAI.getTime() );</span>
+            
+<span class="fc bfc" id="L135" title="All 2 branches covered.">        }else if(chosenNetworkPathInternalVariableAK.equalsIgnoreCase(networkPathOriginDestination)){</span>
+        	
+<span class="fc" id="L137">        	NetworkPath pathAK = net.sendPacket(&quot;A&quot;,&quot;K&quot;);</span>
+        	
+<span class="fc" id="L139">        	resultPath = pathAK;</span>
+        	
+<span class="fc" id="L141">            System.out.println(&quot;Sending a packet from 'A' to 'K':&quot;);</span>
+<span class="fc" id="L142">            System.out.println( pathAK );</span>
+<span class="fc" id="L143">            System.out.println(&quot;Time it took (msec):&quot;);</span>
+<span class="fc" id="L144">            System.out.println( pathAK.getTime() );</span>
+            
+<span class="fc" id="L146">        }else {</span>
+        	
+<span class="fc" id="L148">        	System.out.println(&quot;You did not choose correct option! Try again...&quot;);</span>
+<span class="fc" id="L149">        	System.out.println(</span>
+        			&quot;Examples: \&quot;CJ\&quot;, &quot;
+        			+ &quot;\&quot;CI\&quot;, &quot;
+        			+ &quot;\&quot;CK\&quot;, &quot;
+        			+ &quot;\&quot;BJ\&quot;, &quot;
+        			+ &quot;\&quot;BI\&quot;, &quot;
+        			+ &quot;\&quot;BK\&quot;, &quot;
+        			+ &quot;\&quot;AJ\&quot;, &quot;
+        			+ &quot;\&quot;AI\&quot; or &quot;
+        			+ &quot;\&quot;AK\&quot;&quot;);
+        	
+        }
+<span class="fc" id="L161">	}</span>
+	
+	// By Edimilson Estevam
+	// Create a Getter for the resulPath
+	public NetworkPath getResultPath() {
+		
+<span class="fc" id="L167">		return resultPath;</span>
+		
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

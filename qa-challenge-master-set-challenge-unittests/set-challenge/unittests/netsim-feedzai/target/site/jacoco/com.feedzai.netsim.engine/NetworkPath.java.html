@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NetworkPath.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">netsim</a> &gt; <a href="index.source.html" class="el_package">com.feedzai.netsim.engine</a> &gt; <span class="el_source">NetworkPath.java</span></div><h1>NetworkPath.java</h1><pre class="source lang-java linenums">package com.feedzai.netsim.engine;
+
+import java.util.LinkedList;
+
+/**
+ * Represents the path followed by a packet in the network.
+ * Since this is a network path, it can be represented as an extended LinkedList of ids.
+ */
+<span class="fc" id="L9">public class NetworkPath extends LinkedList&lt;String&gt; {</span>
+    /**
+     * Time it took for a packet to travel the path. Zero, by default, represents an empty path.
+     */
+<span class="fc" id="L13">    private int time = 0;</span>
+
+    /**
+     * Get the time it took the packet to travel the corresponding path
+     */
+    public int getTime() {
+<span class="fc" id="L19">        return time;</span>
+    }
+
+    /**
+     * Update the time it take the pack to travel though the path.
+     *
+     * @param time The time (ms)
+     */
+    public void setTime(int time) {
+<span class="fc" id="L28">        this.time = time;</span>
+<span class="fc" id="L29">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L33">        return super.toString().replace(&quot; &quot;, &quot;&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

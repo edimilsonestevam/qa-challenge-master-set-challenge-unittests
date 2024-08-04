@@ -1,0 +1,11 @@
+com.feedzai.netsim.engine.NetworkConnection#interConnect(Ljava/lang/String;)V
+com.feedzai.netsim.engine.Network#createWithLatency(I)Lcom/feedzai/netsim/engine/Network;
+java.lang.String#equalsIgnoreCase(Ljava/lang/String;)Z
+==
+connect com.feedzai.netsim.engine.Network#connect(Ljava/lang/String;Ljava/lang/String;)V
+connect com.feedzai.netsim.engine.Network#connect(Ljava/lang/String;Ljava/lang/String;I)V
+println java.io.PrintStream#println(Ljava/lang/Object;)V
+getTime com.feedzai.netsim.engine.NetworkPath#getTime()I
+println java.io.PrintStream#println(Ljava/lang/String;)V
+sendPacket com.feedzai.netsim.engine.Network#sendPacket(Ljava/lang/String;Ljava/lang/String;)Lcom/feedzai/netsim/engine/NetworkPath;
+println java.io.PrintStream#println(I)V

@@ -1,0 +1,2 @@
+com.feedzai.netsim.engine.Network#connect(Ljava/lang/String;Ljava/lang/String;I)V
+com.feedzai.netsim.engine.Network#addEdge(Ljava/lang/String;Ljava/lang/String;I)V

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Network.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">netsim</a> &gt; <a href="index.source.html" class="el_package">com.feedzai.netsim.engine</a> &gt; <span class="el_source">Network.java</span></div><h1>Network.java</h1><pre class="source lang-java linenums">
+package com.feedzai.netsim.engine;
+
+import java.util.*;
+
+/**
+ * Represents the overall computer network.
+ */
+public class Network {
+
+    /**
+     * Default latency for the network
+     */
+<span class="fc" id="L14">    private int defaultNetworkLatency = 0;</span>
+
+    /**
+     * The network graph representation. It's represented by an adjacency list. For each node it lists what are
+     * the connected nodes and the weight associated to each one.
+     */
+<span class="fc" id="L20">    Map&lt;String, List&lt;NodeWeigth&gt;&gt; connections = new HashMap&lt;String, List&lt;NodeWeigth&gt;&gt;();</span>
+
+    //----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * Default constructor -- publicly disabled since this is a factory class.
+     *
+     * @param latency Default latency for the network.
+     */
+<span class="fc" id="L29">    protected Network(int latency) {</span>
+<span class="fc" id="L30">        this.defaultNetworkLatency = latency;</span>
+<span class="fc" id="L31">    }</span>
+
+    /**
+     * Factory method for creating a Network is a certain default latency.
+     *
+     * @param latency (ms)
+     * @return the Network object
+     */
+    public static Network createWithLatency(int latency) {
+<span class="fc" id="L40">        return new Network(latency);</span>
+    }
+
+    //----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * Connects two nodes on the network identified by they respective ids. The default network latency is used.
+     *
+     * @param idA First node.
+     * @param idB Second node.
+     */
+    public synchronized void connect(String idA, String idB) {
+<span class="fc" id="L52">        connect(idA, idB, defaultNetworkLatency);</span>
+<span class="fc" id="L53">    }</span>
+
+    /**
+     * Connects two nodes on the network identified by they respective ids. The latency between the two nodes
+     * needs to be specified.
+     *
+     * @param idA     First node.
+     * @param idB     Second node.
+     * @param latency The latency (in msec)
+     */
+    public synchronized void connect(String idA, String idB, int latency) {
+        // Adjacency lists are symmetrical. If there's a NodeWeigth from A to B, there's also one from B to A
+<span class="fc" id="L65">        addEdge(idA, idB, latency);</span>
+<span class="fc" id="L66">        addEdge(idB, idA, latency);</span>
+<span class="fc" id="L67">    }</span>
+
+    /**
+     * Update the NodeWeigth table (graph) by adding a single NodeWeigth from idA to idB.
+     *
+     * @param idA     First edge
+     * @param idB     Second edge
+     * @param latency The latency
+     */
+    private void addEdge(String idA, String idB, int latency) {
+<span class="fc" id="L77">        List nodeEdges = connections.get(idA);</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        if (nodeEdges == null) {</span>
+<span class="fc" id="L79">            nodeEdges = new ArrayList&lt;NodeWeigth&gt;();</span>
+        }
+
+<span class="fc" id="L82">        nodeEdges.add(new NodeWeigth(idB, latency));</span>
+<span class="fc" id="L83">        connections.put(idA, nodeEdges);</span>
+<span class="fc" id="L84">    }</span>
+
+    public synchronized NetworkPath sendPacket(String idA, String idB) {
+        //-------------------------------------------------------
+        // Implementation of Dijkstra's algorithm (basic version)
+        //-------------------------------------------------------
+
+        // Collection of unvisited nodes (initially all nodes)
+<span class="fc" id="L92">        Set&lt;String&gt; unvisited = new HashSet&lt;String&gt;();</span>
+
+        // Tentative distances to target from each node (INFINITE for all except origin)
+<span class="fc" id="L95">        Map&lt;String, Integer&gt; dist = new HashMap&lt;String, Integer&gt;();</span>
+
+        // Collection that tracks nodes and the minimal path used to reach them
+<span class="fc" id="L98">        Map&lt;String, String&gt; path = new HashMap&lt;String, String&gt;();</span>
+
+        // Initialize distances, unvisited nodes, and path tracking
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (String node : connections.keySet()) {</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">            dist.put(node, node.equals(idA) ? 0 : Integer.MAX_VALUE);</span>
+<span class="fc" id="L103">            unvisited.add(node);</span>
+<span class="fc" id="L104">            path.put(node, null);</span>
+<span class="fc" id="L105">        }</span>
+
+        // For all unvisited nodes, proceed until we have nothing else to do
+        // Note that this may exit if the target node is not found (disconnected graph). foundTarget tracks that.
+<span class="fc" id="L109">        boolean foundTarget = false;</span>
+<span class="pc bpc" id="L110" title="1 of 2 branches missed.">        while (!unvisited.isEmpty()) {</span>
+            // Find minimal node
+<span class="fc" id="L112">            String minNode = findMinNode(unvisited, dist);           </span>
+<span class="fc" id="L113">            unvisited.remove(minNode);</span>
+
+            // If we have found the target node we can exit.
+<span class="fc bfc" id="L116" title="All 2 branches covered.">            if (minNode.equals(idB)) {</span>
+                // We have only really found the target node if the distance is finite. If not, it's a disconnected graph.
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">                if (dist.get(minNode) != Integer.MAX_VALUE) {</span>
+<span class="fc" id="L119">                    foundTarget = true;</span>
+                }
+                break;
+            }
+
+            // Get list of neighbours. For each neighbours calculate the estimated distance through his path
+            // I.e., going from the current minimal node plus the weigth of getting to the neighbour.
+            // It the cost of going through there is less than any previous estimated cost, update its cost
+<span class="fc" id="L127">            List&lt;NodeWeigth&gt; neighbours = connections.get(minNode);</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">            for (NodeWeigth v : neighbours) {</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">                if (unvisited.contains(v.node)) {</span>
+<span class="fc" id="L130">                    int distThroughNode = dist.get(minNode) + v.weight;</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">                    if (distThroughNode &lt; dist.get(v.node)) {</span>
+<span class="fc" id="L132">                        dist.put(v.node, distThroughNode);</span>
+<span class="fc" id="L133">                        path.put(v.node, minNode);                  // Path to v is through minNode</span>
+                    }
+                }
+<span class="fc" id="L136">            }</span>
+<span class="fc" id="L137">        }</span>
+
+        // Reconstruct the minimal path using the tracking that has been done (only if a path has been found)
+<span class="fc" id="L140">        NetworkPath minPath = new NetworkPath();</span>
+
+<span class="pc bpc" id="L142" title="1 of 2 branches missed.">        if (foundTarget) {</span>
+<span class="fc" id="L143">            String current = idB;</span>
+
+<span class="fc" id="L145">            minPath.addFirst(current);</span>
+<span class="fc" id="L146">            minPath.setTime(dist.get(idB));</span>
+
+            while (true) {
+<span class="fc" id="L149">                String next = path.get(current);</span>
+<span class="fc bfc" id="L150" title="All 2 branches covered.">                if (next == null)</span>
+<span class="fc" id="L151">                    break;</span>
+
+<span class="fc" id="L153">                minPath.addFirst(next);</span>
+<span class="fc" id="L154">                current = next;</span>
+<span class="fc" id="L155">            }</span>
+        }
+
+<span class="fc" id="L158">        return minPath;</span>
+    }
+
+    /**
+     * Given a set of unvisited nodes and a map of corresponding distances, find the unvisited node that has
+     * the smallest estimated distance. Utility method for being used with sendPacket/Dijkstra's algorithm.
+     *
+     * @param unvisitedNodes Nodes that have not yet been visited.
+     * @param distances      Complete list of estimated distances in the graph (visited and unvisited nodes).
+     * @return The id of the node with the smallest estimated distance.
+     */
+    private String findMinNode(Set&lt;String&gt; unvisitedNodes, Map&lt;String, Integer&gt; distances) {
+<span class="fc" id="L170">        String minNode = null;</span>
+<span class="fc" id="L171">        int minDist = Integer.MAX_VALUE;</span>
+
+<span class="fc bfc" id="L173" title="All 2 branches covered.">        for (String node : unvisitedNodes) {</span>
+<span class="fc" id="L174">            int d = distances.get(node);</span>
+<span class="fc bfc" id="L175" title="All 2 branches covered.">            if (d &lt;= minDist) {</span>
+<span class="fc" id="L176">                minDist = d;</span>
+<span class="fc" id="L177">                minNode = node;</span>
+            }
+<span class="fc" id="L179">        }</span>
+
+<span class="fc" id="L181">        return minNode;</span>
+    }
+
+    //----------------------------------------------------------------------------------------------------------------
+
+    @Override
+    public String toString() {
+<span class="fc" id="L188">        ArrayList&lt;String&gt; nodes = new ArrayList&lt;String&gt;();</span>
+
+<span class="fc bfc" id="L190" title="All 2 branches covered.">        for (String node : connections.keySet()) {</span>
+<span class="fc bfc" id="L191" title="All 2 branches covered.">            for (NodeWeigth c : connections.get(node)) {</span>
+<span class="fc" id="L192">                nodes.add(String.format(&quot;[%s,%s,%d]&quot;, node, c.node, c.weight));</span>
+<span class="fc" id="L193">            }</span>
+<span class="fc" id="L194">        }</span>
+<span class="fc" id="L195">        Collections.sort(nodes);</span>
+
+<span class="fc" id="L197">        return &quot;[&quot; + String.join(&quot;,&quot;, nodes) + &quot;]&quot;;</span>
+    }
+
+    //----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * Auxiliary class (structure) representing a pair of (Node, Weight).
+     */
+    private class NodeWeigth {
+<span class="fc" id="L206">        public NodeWeigth(String node, int weight) {</span>
+<span class="fc" id="L207">            this.node = node;</span>
+<span class="fc" id="L208">            this.weight = weight;</span>
+<span class="fc" id="L209">        }</span>
+
+        public String node;
+        public int weight;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

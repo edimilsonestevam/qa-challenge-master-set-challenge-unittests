@@ -1,0 +1,3 @@
+com.feedzai.netsim.engine.Network#connect(Ljava/lang/String;Ljava/lang/String;)V
+==
+connect com.feedzai.netsim.engine.Network#connect(Ljava/lang/String;Ljava/lang/String;I)V

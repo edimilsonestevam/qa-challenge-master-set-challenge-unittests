@@ -1,0 +1,10 @@
+com.feedzai.netsim.engine.Network#toString()Ljava/lang/String;
+java.util.ArrayList#<init>()V
+java.util.ArrayList#instance-init#
+java.lang.String#join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+java.util.Collections#sort(Ljava/util/List;)V
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+==
+add java.util.ArrayList#add(Ljava/lang/Object;)Z
+get java.util.Map#get(Ljava/lang/Object;)Ljava/lang/Object;
+keySet java.util.Map#keySet()Ljava/util/Set;

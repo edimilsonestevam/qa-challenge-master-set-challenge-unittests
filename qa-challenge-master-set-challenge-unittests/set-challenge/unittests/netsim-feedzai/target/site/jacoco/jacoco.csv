@@ -1,0 +1,6 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+netsim,com.feedzai.netsim.engine,Network.NodeWeigth,0,12,0,0,0,4,0,1,0,1
+netsim,com.feedzai.netsim.engine,Network,0,317,3,27,0,70,3,20,0,8
+netsim,com.feedzai.netsim.engine,NetworkConnection,0,332,0,18,0,94,0,12,0,3
+netsim,com.feedzai.netsim.engine,NetworkPath,0,19,0,0,0,6,0,4,0,4
+netsim,com.feedzai.netsim.example,Main,11,0,0,0,4,0,2,0,2,0

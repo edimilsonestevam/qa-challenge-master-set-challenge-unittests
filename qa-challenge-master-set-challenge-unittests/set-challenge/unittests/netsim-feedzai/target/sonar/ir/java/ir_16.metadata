@@ -1,0 +1,5 @@
+com.feedzai.netsim.example.Main#main([Ljava/lang/String;)V
+com.feedzai.netsim.engine.NetworkConnection#instance-init#
+com.feedzai.netsim.engine.NetworkConnection#<init>()V
+==
+interConnect com.feedzai.netsim.engine.NetworkConnection#interConnect(Ljava/lang/String;)V

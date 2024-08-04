@@ -1,0 +1,7 @@
+organization=edimilsonestevam
+projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.56210
+dashboardUrl=https://sonarcloud.io/dashboard?id=edimilsonestevam_qa-challenge-master-set-challenge-unittests
+ceTaskId=AZEbRAT-bDaH5rzEImbZ
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZEbRAT-bDaH5rzEImbZ
