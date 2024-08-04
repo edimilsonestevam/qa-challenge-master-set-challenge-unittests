@@ -1,5 +1,5 @@
 # Ignore the target directory
-target/
+/target/
 
 # Ignore other common files and directories
 *.log
@@ -12,7 +12,7 @@ target/
 # Maven specific ignores
 .mvn/
 !.mvn/wrapper/maven-wrapper.jar
-# **/target/
+**/target/
 **/logs/
 **/temp/
 
