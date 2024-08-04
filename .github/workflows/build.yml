@@ -44,36 +44,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      - name: List files in root directory
-        run: ls -la
+      - name: List files in target directory
+        run: ls -la target
 
-      - name: Find directory containing pom.xml and change to it
-        id: find-pom
-        run: |
-          echo "Searching for pom.xml..."
-          POM_DIR=$(find . -type f -name "pom.xml" -exec dirname {} \; | head -n 1)
-          if [ -z "$POM_DIR" ]; then
-            echo "pom.xml not found in any directory" && exit 1
-          else
-            echo "Found pom.xml in $POM_DIR"
-            echo "POM_DIR=$POM_DIR" >> $GITHUB_ENV
-          fi
-          echo "Listing files in the directory now:"
-          ls -la
+      - name: List files in jacoco directory
+        run: ls -la target/site/jacoco
 
       - name: Build the project
         run: mvn -B verify
-        working-directory: ${{ env.POM_DIR }}
-
-      - name: List files in target directory
-        run: ls -la ./qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/target
-
-      - name: List files in jacoco directory
-        run: ls -la ./qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai/target/site/jacoco
+        working-directory: ./qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai
 
       - name: SonarCloud Scan
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        working-directory: ${{ env.POM_DIR }}
+        working-directory: ./qa-challenge-master-set-challenge-unittests/set-challenge/unittests/netsim-feedzai

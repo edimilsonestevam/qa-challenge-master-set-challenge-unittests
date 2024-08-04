@@ -1,62 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.feedzai.netsim.test.NetworkConnectionTest" time="0.266" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.feedzai.netsim.test.NetworkConnectionTest" time="0.237" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai\target\test-classes;C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai\target\classes;C:\Users\edimi\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\edimi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\edimi\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.12\jacoco-maven-plugin-0.8.12.jar;C:\Users\edimi\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.24\plexus-utils-3.0.24.jar;C:\Users\edimi\.m2\repository\org\apache\maven\shared\file-management\3.1.0\file-management-3.1.0.jar;C:\Users\edimi\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\edimi\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\edimi\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\edimi\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\edimi\.m2\repository\org\jacoco\org.jacoco.agent\0.8.12\org.jacoco.agent-0.8.12-runtime.jar;C:\Users\edimi\.m2\repository\org\jacoco\org.jacoco.core\0.8.12\org.jacoco.core-0.8.12.jar;C:\Users\edimi\.m2\repository\org\ow2\asm\asm\9.7\asm-9.7.jar;C:\Users\edimi\.m2\repository\org\ow2\asm\asm-commons\9.7\asm-commons-9.7.jar;C:\Users\edimi\.m2\repository\org\ow2\asm\asm-tree\9.7\asm-tree-9.7.jar;C:\Users\edimi\.m2\repository\org\jacoco\org.jacoco.report\0.8.12\org.jacoco.report-0.8.12.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.class.path" value="C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai\target\test-classes;C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai\target\classes;C:\Users\edimi\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\edimi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
     <property name="user.timezone" value="America/Denver"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\edimi\AppData\Local\Temp\surefire11193852452712069419\surefirebooter-20240803202335533_3.jar C:\Users\edimi\AppData\Local\Temp\surefire11193852452712069419 2024-08-03T20-23-35_287-jvmRun1 surefire-20240803202335533_1tmp surefire_0-20240803202335533_2tmp"/>
+    <property name="sun.boot.library.path" value="C:\Users\edimi\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\edimi\AppData\Local\Temp\surefire14329940988542716321\surefirebooter-20240804002510035_3.jar C:\Users\edimi\AppData\Local\Temp\surefire14329940988542716321 2024-08-04T00-25-09_550-jvmRun1 surefire-20240804002510035_1tmp surefire_0-20240804002510035_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai\target\test-classes;C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai\target\classes;C:\Users\edimi\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\edimi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\edimi\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.12\jacoco-maven-plugin-0.8.12.jar;C:\Users\edimi\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.24\plexus-utils-3.0.24.jar;C:\Users\edimi\.m2\repository\org\apache\maven\shared\file-management\3.1.0\file-management-3.1.0.jar;C:\Users\edimi\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\edimi\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\edimi\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\edimi\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\edimi\.m2\repository\org\jacoco\org.jacoco.agent\0.8.12\org.jacoco.agent-0.8.12-runtime.jar;C:\Users\edimi\.m2\repository\org\jacoco\org.jacoco.core\0.8.12\org.jacoco.core-0.8.12.jar;C:\Users\edimi\.m2\repository\org\ow2\asm\asm\9.7\asm-9.7.jar;C:\Users\edimi\.m2\repository\org\ow2\asm\asm-commons\9.7\asm-commons-9.7.jar;C:\Users\edimi\.m2\repository\org\ow2\asm\asm-tree\9.7\asm-tree-9.7.jar;C:\Users\edimi\.m2\repository\org\jacoco\org.jacoco.report\0.8.12\org.jacoco.report-0.8.12.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai\target\test-classes;C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai\target\classes;C:\Users\edimi\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\edimi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\edimi"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-04-16"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-17"/>
+    <property name="java.version.date" value="2023-10-17"/>
+    <property name="java.home" value="C:\Users\edimi\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre"/>
     <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
     <property name="basedir" value="C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\edimi\AppData\Local\Temp\surefire11193852452712069419\surefirebooter-20240803202335533_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\edimi\AppData\Local\Temp\surefire14329940988542716321\surefirebooter-20240804002510035_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="17.0.11+7-LTS-207"/>
+    <property name="java.runtime.version" value="17.0.9+9"/>
     <property name="user.name" value="edimilsonestevam"/>
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="Cp1252"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.9+9"/>
     <property name="localRepository" value="C:\Users\edimi\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="C:\Users\edimi\AppData\Local\Temp\"/>
-    <property name="java.version" value="17.0.11"/>
+    <property name="java.version" value="17.0.9"/>
     <property name="user.dir" value="C:\Users\edimi\Repositories\qa-challenge-master-set-challenge-unittests\qa-challenge-master-set-challenge-unittests\set-challenge\unittests\netsim-feedzai"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/edimi/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin/server;C:/Users/edimi/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Portugal Identity Card\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;%JAVA_HOME%\bin;%MAVEN_HOME%\bin;C:\Users\edimi\AppData\Local\Programs\Python\Launcher\;C:\Users\edimi\AppData\Local\Microsoft\WindowsApps;C:\Users\edimi\AppData\Local\GitHubDesktop\bin;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Java\jre1.8.0_202\bin;C:\Program Files\Apache\apache-maven-3.9.8\bin;C:\Users\edimi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\edimi\AppData\Roaming\npm;C:\WINDOWS\System32;;."/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="17.0.11+7-LTS-207"/>
+    <property name="java.library.path" value="C:\Users\edimi\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/edimi/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin/server;C:/Users/edimi/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Portugal Identity Card\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;%JAVA_HOME%\bin;%MAVEN_HOME%\bin;C:\Users\edimi\AppData\Local\Programs\Python\Launcher\;C:\Users\edimi\AppData\Local\Microsoft\WindowsApps;C:\Users\edimi\AppData\Local\GitHubDesktop\bin;C:\Program Files\Java\jdk-17\bin;C:\Program Files\Java\jre1.8.0_202\bin;C:\Program Files\Apache\apache-maven-3.9.8\bin;C:\Users\edimi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\edimi\AppData\Roaming\npm;C:\WINDOWS\System32;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.9+9"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testNetworkConnectionPathAI" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.05">
+  <testcase name="testNetworkConnectionPathAI" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.075">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 Sending a packet from 'A' to 'I':
@@ -65,7 +67,7 @@ Time it took (msec):
 7
 ]]></system-out>
   </testcase>
-  <testcase name="testNetworkConnectionPathAJ" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.007">
+  <testcase name="testNetworkConnectionPathAJ" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.003">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 Sending a packet from 'A' to 'J':
@@ -74,7 +76,7 @@ Time it took (msec):
 4
 ]]></system-out>
   </testcase>
-  <testcase name="testNetworkConnectionPathAK" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.019">
+  <testcase name="testNetworkConnectionPathAK" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.003">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 Sending a packet from 'A' to 'K':
@@ -83,7 +85,7 @@ Time it took (msec):
 18
 ]]></system-out>
   </testcase>
-  <testcase name="testNetworkConnectionPathBI" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.005">
+  <testcase name="testNetworkConnectionPathBI" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.003">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 Sending a packet from 'B' to 'I':
@@ -92,7 +94,7 @@ Time it took (msec):
 7
 ]]></system-out>
   </testcase>
-  <testcase name="testNetworkConnectionPathBJ" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.004">
+  <testcase name="testNetworkConnectionPathBJ" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.002">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 Sending a packet from 'B' to 'J':
@@ -110,7 +112,7 @@ Time it took (msec):
 18
 ]]></system-out>
   </testcase>
-  <testcase name="testNetworkConnectionPathCI" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.007">
+  <testcase name="testNetworkConnectionPathCI" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.002">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 Sending a packet from 'C' to 'I':
@@ -119,7 +121,7 @@ Time it took (msec):
 7
 ]]></system-out>
   </testcase>
-  <testcase name="testNetworkConnectionPathCJ" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.004">
+  <testcase name="testNetworkConnectionPathCJ" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.002">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 Sending a packet from 'C' to 'J':
@@ -128,7 +130,7 @@ Time it took (msec):
 6
 ]]></system-out>
   </testcase>
-  <testcase name="testNetworkConnectionPathCK" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.003">
+  <testcase name="testNetworkConnectionPathCK" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.002">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 Sending a packet from 'C' to 'K':
@@ -137,7 +139,7 @@ Time it took (msec):
 20
 ]]></system-out>
   </testcase>
-  <testcase name="testNetworkConnectionPathWrong" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.004">
+  <testcase name="testNetworkConnectionPathWrong" classname="com.feedzai.netsim.test.NetworkConnectionTest" time="0.002">
     <system-out><![CDATA[Network representation (as an adjacency list)
 [[A,D,1],[B,D,1],[C,E,1],[D,A,1],[D,B,1],[D,E,3],[D,F,2],[E,C,1],[E,D,3],[E,F,4],[E,G,5],[F,D,2],[F,E,4],[F,G,3],[F,H,5],[F,J,1],[G,E,5],[G,F,3],[G,I,1],[H,F,5],[H,K,10],[I,G,1],[J,F,1],[K,H,10]]
 You did not choose correct option! Try again...

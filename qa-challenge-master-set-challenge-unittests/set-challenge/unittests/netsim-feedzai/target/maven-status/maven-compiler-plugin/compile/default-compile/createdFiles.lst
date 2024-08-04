@@ -1,0 +1,5 @@
+com\feedzai\netsim\example\Main.class
+com\feedzai\netsim\engine\NetworkConnection.class
+com\feedzai\netsim\engine\NetworkPath.class
+com\feedzai\netsim\engine\Network.class
+com\feedzai\netsim\engine\Network$NodeWeigth.class

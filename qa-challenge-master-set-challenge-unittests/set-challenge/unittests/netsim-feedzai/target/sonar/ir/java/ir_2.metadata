@@ -1,3 +1,0 @@
-com.feedzai.netsim.engine.Network#createWithLatency(I)Lcom/feedzai/netsim/engine/Network;
-com.feedzai.netsim.engine.Network#<init>(I)V
-com.feedzai.netsim.engine.Network#instance-init#
