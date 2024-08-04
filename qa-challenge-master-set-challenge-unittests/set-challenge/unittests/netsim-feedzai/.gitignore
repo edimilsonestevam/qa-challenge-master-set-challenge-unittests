@@ -12,7 +12,7 @@ target/
 # Maven specific ignores
 .mvn/
 !.mvn/wrapper/maven-wrapper.jar
-**/target/
+# **/target/
 **/logs/
 **/temp/
 
