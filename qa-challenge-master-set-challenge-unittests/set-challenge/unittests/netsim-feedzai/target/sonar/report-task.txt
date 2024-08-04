@@ -3,5 +3,5 @@ projectKey=edimilsonestevam_qa-challenge-master-set-challenge-unittests
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.56210
 dashboardUrl=https://sonarcloud.io/dashboard?id=edimilsonestevam_qa-challenge-master-set-challenge-unittests
-ceTaskId=AZEbWnxkOOktxpkiXq-D
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZEbWnxkOOktxpkiXq-D
+ceTaskId=AZEbekjboEI-hiMZ9kMT
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZEbekjboEI-hiMZ9kMT
