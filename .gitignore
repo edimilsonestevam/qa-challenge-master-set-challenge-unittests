@@ -1,24 +1,7 @@
-# Ignore directories created by popular build tools
-build/
-dist/
-target/
-
-# Ignore IDE-specific directories and files
-/.idea/
-/.vscode/
-/*.iml
-
-# Ignore OS-specific files
-.DS_Store
-Thumbs.db
-
-# Java-specific ignores
+# Compiled class file
 *.class
-*.jar
-*.war
-*.ear
 
-# Log files
+# Log file
 *.log
 
 # BlueJ files
@@ -36,17 +19,6 @@ Thumbs.db
 *.tar.gz
 *.rar
 
-# JavaScript/Node.js specific ignores
-node_modules/
-npm-debug.log
-yarn-error.log
-yarn-debug.log
-
-# Dependency directories
-jspm_packages/
-
-# TypeScript cache
-*.tsbuildinfo
-
-# JavaScript test coverage
-coverage/
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
